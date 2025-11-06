@@ -1,0 +1,11 @@
+/* Minimal tweaks for a clean look */
+.css-18e3th9, .css-1d391kg { /* Streamlit containers (best-effort generic classes) */
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+code, pre code {
+  font-size: 0.9rem !important;
+}
+
+
+
+
