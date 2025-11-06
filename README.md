@@ -1,4 +1,4 @@
-# ⚖️ Distributed Judge — A Local Distributed Computing Code Evaluation Platform
+# Distributed Judge — A Local Distributed Computing Code Evaluation Platform
 
 **Distributed Judge** is a lightweight simulation of an **online coding test platform** (like LeetCode or HackerRank) designed to demonstrate **core distributed computing concepts** in Python.
 
@@ -6,7 +6,7 @@ This project runs fully **locally** — no Docker, AWS, or Hadoop required — a
 
 ---
 
-## 🚀 Features Implemented
+## Features Implemented
 
 | No. | Concept | Description |
 |:---:|:---------|:-------------|
@@ -19,7 +19,7 @@ This project runs fully **locally** — no Docker, AWS, or Hadoop required — a
 
 ---
 
-## 🧠 System Architecture
+## System Architecture
 
 ```text
         +----------------+
@@ -43,7 +43,7 @@ This project runs fully **locally** — no Docker, AWS, or Hadoop required — a
 
 Each node acts as a local microservice with its own port, queue, and heartbeat. The NodeManager oversees these nodes, performs leader election, and routes requests efficiently.
 
-**Tech Stack**
+## Tech Stack
 
 | Layer                | Technology                                                                             | Purpose                                                  |
 | -------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------- |
@@ -54,12 +54,12 @@ Each node acts as a local microservice with its own port, queue, and heartbeat. 
 | **Language Support** | Python                                                                                 | Code execution sandboxed locally                         |
 
 
-**⚙️ Setup Instructions**
-🐍 1. Clone the repository
+##  Setup Instructions
+1. Clone the repository
 git clone https://github.com/<your-username>/distributed-judge.git
 cd distributed-judge
 
-🧩 2. Set up the backend
+2. Set up the backend
 cd backend
 pip install -r requirements.txt   # or install manually: streamlit, flask, etc.
 python main_backend.py
@@ -67,7 +67,7 @@ python main_backend.py
 
 This starts the RMI server on 127.0.0.1:9000 and worker nodes on ports 9101–9103.
 
-💻 3. Run the frontend
+3. Run the frontend
 
 In a new terminal:
 
@@ -77,7 +77,7 @@ streamlit run app.py
 
 The frontend UI will open in your browser at http://localhost:8501
 
-**Demonstrations**
+## Demonstrations
 ✅ Basic Workflow
 
 Launch the backend.
@@ -92,7 +92,7 @@ Submit your Python solution.
 
 The backend distributes, executes, and returns the result via RMI.
 
-**⚙️ Failure & Recovery Simulation**
+##  Failure & Recovery Simulation
 
 Kill one node → backend detects failure via heartbeat.
 
@@ -100,32 +100,14 @@ Remaining nodes rebalance the load automatically.
 
 When the node revives, it rejoins the cluster and resumes work.
 
-**🗳️ Leader Election**
+##  Leader Election
 
 During startup or node failure, the BullyElection algorithm triggers.
 
 The node with the highest ID becomes the leader and handles replication duties.
 
-**📂 Project Structure**
-distributed-judge/
-├── backend/
-│   ├── main_backend.py
-│   ├── rmi_server.py
-│   ├── node_manager.py
-│   ├── election.py
-│   ├── clock_sync.py
-│   ├── replication.py
-│   ├── load_balancer.py
-│   └── utils/
-│       └── logger.py
-└── frontend/
-    ├── app.py
-    ├── pages/
-    ├── utils/
-    ├── assets/
-    └── config.py
 
-**Distributed System Highlights**
+## Distributed System Highlights
 
 Fully local simulation of distributed computing principles.
 
@@ -137,7 +119,7 @@ Clear visualization through Streamlit admin dashboard.
 
 Excellent for education and demonstration of distributed systems.
 
-**📚 Learning Outcomes**
+##  Learning Outcomes
 
 By studying or running this project, you’ll understand:
 
@@ -149,7 +131,7 @@ How real systems (like LeetCode/HackerRank) might architect their backend job ev
 
 How to apply distributed algorithms practically using Python
 
-**💡 Future Improvements**
+##  Future Improvements
 
 Add persistent storage (SQLite/Postgres) for submissions.
 
@@ -159,17 +141,17 @@ Add real-time WebSocket logs to frontend.
 
 Add multiple programming language support.
 
-**Author**
+## Author
 
 Parth Gandhi
-🎓 B.Tech in Computer Engineering
-💡 Passionate about Distributed Systems, Backend Development, and AI-driven Education Platforms.
+ B.Tech in Computer Engineering
+ Passionate about Distributed Systems, Backend Development, and AI-driven Education Platforms.
 
-**🛠 License**
+##  License
 
 MIT License © 2025 Parth Gandhi
 
-**🌟 Contributing**
+##  Contributing
 
 Pull requests are welcome!
 For major changes, please open an issue first to discuss what you’d like to improve.
