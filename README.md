@@ -38,7 +38,8 @@ This project runs fully **locally** — no Docker, AWS, or Hadoop required — a
                  |  |  |
                  ↓  ↓  ↓
           (Clock sync, replication,
-           election, load balancing) ```
+           election, load balancing) 
+```
 
 Each node acts as a local microservice with its own port, queue, and heartbeat. The NodeManager oversees these nodes, performs leader election, and routes requests efficiently.
 
